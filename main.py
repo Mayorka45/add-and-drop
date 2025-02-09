@@ -95,7 +95,7 @@ def check_seat_availability(sec):
             section4_seat_info_element = driver.find_element(By.XPATH, "//*[@id='pg0_V_dgCourses']/tbody/tr[7]/td[6]")
             section4_seat_info = section4_seat_info_element.text.strip()
             if section4_seat_info and section4_seat_info[0] != '0':  # Adjust seat count as needed
-                course_code_element = driver.find_element(By.XPATH, "//*[@id='pg0_V_dgCourses'']/tbody/tr[7]/td[3]")
+                course_code_element = driver.find_element(By.XPATH, "//*[@id='pg0_V_dgCourses']/tbody/tr[7]/td[3]")
                 course_code = course_code_element.text.strip()
                 print(f"Seats available for {course_code} (Section 4): {section4_seat_info}")
                 send_email(course_code, section4_seat_info)
