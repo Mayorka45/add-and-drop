@@ -22,8 +22,8 @@ driver.get(url)
 
 
 def send_email(course_code, section_info):
-    sender_email = "Ab.razid@aui.ma"
-    receiver_email = "L.adnane@aui.ma"
+    sender_email = "sender email"
+    receiver_email = "receiver email"
     subject = f"Seat Available for {course_code}"
     body = f"Seats available for {course_code}: {section_info}"
 
@@ -36,7 +36,7 @@ def send_email(course_code, section_info):
     try:
         with smtplib.SMTP('smtp.office365.com', 587) as server:
             server.starttls()
-            server.login(sender_email, "Modriccr7zinobixaui.")
+            server.login(sender_email, "sender password")
             server.sendmail(sender_email, receiver_email, msg.as_string())
             print(f"Email sent to {receiver_email} for {course_code}")
     except Exception as e:
